@@ -32,6 +32,11 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     }
 
+    override fun onBackPressed() {
+        presenter.disposeDisposable()
+        super.onBackPressed()
+    }
+
     override fun showKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
 
     override fun hideKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)

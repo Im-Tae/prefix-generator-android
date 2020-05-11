@@ -10,5 +10,5 @@ interface BasePresenter<T> {
 
     fun addDisposable(disposable: Disposable)
 
-    fun clearDisposable()
+    fun disposeDisposable()
 }

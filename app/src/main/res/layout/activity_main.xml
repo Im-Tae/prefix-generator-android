@@ -61,7 +61,7 @@
             <Button
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/button_hover_event"
                 android:layout_gravity="center"
                 android:text="생성!"
                 style="@style/button_style"
