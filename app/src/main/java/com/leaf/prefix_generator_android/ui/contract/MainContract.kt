@@ -5,7 +5,11 @@ import com.leaf.prefix_generator_android.base.BaseView
 
 class MainContract {
 
-    interface View : BaseView<Presenter>
+    interface View : BaseView<Presenter> {
+        fun showExample()
+    }
 
-    interface Presenter : BasePresenter<View>
+    interface Presenter : BasePresenter<View> {
+        fun getName()
+    }
 }

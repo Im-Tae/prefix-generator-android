@@ -22,14 +22,19 @@ class MainActivity : BaseActivity(), MainContract.View {
         binding.main = this
 
         presenter = MainPresenter(this)
+
+        init()
     }
 
-    override fun init() {}
+    override fun init() = showExample()
+
+    override fun showExample() {
+
+    }
 
     override fun showKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
 
     override fun hideKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
 
     override fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-
 }

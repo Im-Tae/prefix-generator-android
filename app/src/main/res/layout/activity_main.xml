@@ -39,6 +39,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/location"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
@@ -48,6 +49,7 @@
                 />
 
             <EditText
+                android:id="@+id/name"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
@@ -63,11 +65,13 @@
                 android:layout_gravity="center"
                 android:text="생성!"
                 style="@style/button_style"
+                android:onClick="@{() -> main.presenter.getName()}"
                 />
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/result_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="생성 버튼을 누르면 여기에 결과가 표시됩니다."
@@ -93,7 +97,40 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+        <TextView
+            android:id="@+id/example_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            style="@style/content_style"
+            android:background="@drawable/custom_textview"/>
 
+            <TextView
+                android:id="@+id/example_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp"
+                style="@style/content_style"
+                android:background="@drawable/custom_textview"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp"
+                style="@style/content_style"
+                android:text="→"/>
+
+            <TextView
+                android:id="@+id/example_result_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp"
+                style="@style/content_style"
+                android:background="@drawable/custom_textview"/>
 
         </LinearLayout>
 

@@ -8,6 +8,10 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
 
     override val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
+    override fun getName() {
+
+    }
+
     override fun addDisposable(disposable: Disposable) { compositeDisposable.add(disposable) }
 
     override fun clearDisposable() = compositeDisposable.clear()
