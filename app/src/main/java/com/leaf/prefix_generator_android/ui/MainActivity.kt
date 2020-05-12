@@ -3,7 +3,6 @@ package com.leaf.prefix_generator_android.ui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import com.leaf.prefix_generator_android.R
 import com.leaf.prefix_generator_android.base.BaseActivity
 import com.leaf.prefix_generator_android.databinding.ActivityMainBinding

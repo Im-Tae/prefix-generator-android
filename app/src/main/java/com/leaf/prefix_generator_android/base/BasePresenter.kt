@@ -1,7 +1,7 @@
 package com.leaf.prefix_generator_android.base
 
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 interface BasePresenter<T> {
 

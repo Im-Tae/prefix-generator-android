@@ -1,8 +1,8 @@
 package com.leaf.prefix_generator_android.ui.presenter
 
 import com.leaf.prefix_generator_android.ui.contract.MainContract
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 class MainPresenter(override val view: MainContract.View) : MainContract.Presenter {
 
