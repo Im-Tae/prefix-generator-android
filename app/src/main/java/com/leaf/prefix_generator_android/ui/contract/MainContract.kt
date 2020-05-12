@@ -12,6 +12,8 @@ class MainContract {
         fun buttonOnClick()
 
         fun clipBoardOnClick()
+
+        fun showFragment()
     }
 
     interface Presenter : BasePresenter<View> {

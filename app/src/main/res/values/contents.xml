@@ -307,12 +307,17 @@
     </string-array>
 
     <string-array name="exampleNames">
-        <item>홍길동</item>
         <item>박종현</item>
         <item>임태건</item>
         <item>박영준</item>
         <item>유태건</item>
+        <item>양현승</item>
         <item>이창현</item>
+        <item>박찬우</item>
+        <item>박인후</item>
+        <item>표현수</item>
+        <item>조관익</item>
+        <item>박상유</item>
     </string-array>
 
     <string-array name="exampleLocations">
@@ -323,6 +328,9 @@
         <item>울산</item>
         <item>동탄</item>
         <item>순천</item>
+        <item>인천</item>
+        <item>진도</item>
+        <item>목포</item>
     </string-array>
 
 </resources>

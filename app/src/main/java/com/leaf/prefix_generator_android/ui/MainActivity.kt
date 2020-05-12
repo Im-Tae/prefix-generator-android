@@ -57,13 +57,16 @@ class MainActivity : BaseActivity(), MainContract.View {
 
     override fun showKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
 
-    override fun hideKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
+    override fun hideKeyboard() = KeyboardUtil.hideKeyboard(this.currentFocus, this)
 
     override fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
     override fun getContext(): Context = this
 
     override fun buttonOnClick() {
+
+        hideKeyboard()
+
         presenter.addDisposable(
             Observable.just(presenter.getPrefixName(location.text.toString(), name.text.toString()))
                 .subscribeOn(Schedulers.io())
@@ -73,4 +76,17 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun clipBoardOnClick() = presenter.clipBoardText(result_name)
+
+    override fun showFragment() {
+        presenter.addDisposable(
+            Observable.just(hideKeyboard())
+                .subscribe {
+                    supportFragmentManager.beginTransaction()
+                        .setCustomAnimations(R.anim.slide_up,0,0, R.anim.slide_down)
+                        .add(android.R.id.content, InformationFragment())
+                        .addToBackStack(null)
+                        .commit()
+                }
+        )
+    }
 }
