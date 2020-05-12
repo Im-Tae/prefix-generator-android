@@ -11,5 +11,7 @@ class MainContract {
 
     interface Presenter : BasePresenter<View> {
         fun getName()
+
+        fun getExampleName(locations : Array<String>, names: Array<String>) : ArrayList<String>
     }
 }

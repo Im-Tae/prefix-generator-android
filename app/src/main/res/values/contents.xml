@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="jobs_1">
+    <string-array name="jobs1">
         <item>도둑</item>
         <item>연쇄절도범</item>
         <item>수호자</item>
@@ -20,7 +20,7 @@
         <item>갈취왕</item>
     </string-array>
 
-    <string-array name="jobs_2">
+    <string-array name="jobs2">
         <item>카사노바</item>
         <item>소리없는방귀빌런</item>
         <item>절대강자</item>
@@ -42,7 +42,7 @@
         <item>개미핥기조련사</item>
     </string-array>
 
-    <string-array name="locations_1">
+    <string-array name="locations1">
         <item>노인정</item>
         <item>사우나</item>
         <item>성인용품점</item>
@@ -110,7 +110,7 @@
         <item>동물원</item>
     </string-array>
 
-    <string-array name="locations_2">
+    <string-array name="locations2">
         <item>폐지줍는할머니</item>
         <item>포식자</item>
         <item>AD</item>
@@ -159,7 +159,7 @@
         <item>엽떡</item>
     </string-array>
 
-    <string-array name="specificLocations_locations">
+    <string-array name="specificLocationsLocations">
         <item>어린이보호구역</item>
         <item>장례식장</item>
         <item>수능갤러리</item>
@@ -208,7 +208,7 @@
         <item>엽떡</item>
     </string-array>
 
-    <string-array name="specificLocations_jobs">
+    <string-array name="specificLocationsJobs">
         <item>스피드레이서</item>
         <item>육개장미식가</item>
         <item>삼수생</item>

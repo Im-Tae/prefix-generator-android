@@ -12,6 +12,16 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
 
     }
 
+    override fun getExampleName(locations : Array<String>, names: Array<String>): ArrayList<String> {
+
+        val exampleNameArrayList = arrayListOf<String>()
+
+        exampleNameArrayList.add(locations[(locations.indices).random()])
+        exampleNameArrayList.add(names[(names.indices).random()])
+
+        return exampleNameArrayList
+    }
+
     override fun addDisposable(disposable: Disposable) { compositeDisposable.add(disposable) }
 
     override fun disposeDisposable() = compositeDisposable.dispose()
