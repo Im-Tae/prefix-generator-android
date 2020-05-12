@@ -1,5 +1,7 @@
 ## 악질 이름 생성기
 
+[![Author](https://img.shields.io/badge/author-Im--Tae-red.svg)]( https://github.com/Im-Tae ) ![language](https://img.shields.io/badge/language-Kotlin-green) [![tools](https://img.shields.io/badge/tools-Android%20Studio-green)]() [![](https://img.shields.io/badge/license-Apache--2.0-blue)]()
+
 악질 이름 생성기 안드로이드 어플입니다.</br></br>
 
 
@@ -33,3 +35,13 @@ https://name.ho9.me/
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width = "600" height = "200"  />]() 
 
 링크 추가 예정.
+
+
+
+
+
+### Library
+
+[RxJava2]()
+
+[betterkoreankotlin](https://github.com/daangn/betterkoreankotlin)
