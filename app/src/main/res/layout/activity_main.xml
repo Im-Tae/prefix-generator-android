@@ -20,15 +20,17 @@
 
         <TextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="악질 이름 생성기"
             style="@style/title_style"
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="랜덤으로 악질 이름을 생성합니다."
             style="@style/content_style"
             />
@@ -73,8 +75,9 @@
 
         <TextView
             android:id="@+id/result_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="생성 버튼을 누르면 여기에 결과가 표시됩니다."
             style="@style/content_style"
             android:onClick="@{() -> main.clipBoardOnClick()}"
@@ -88,8 +91,9 @@
             />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="어떤 이름이 나올까?"
             style="@style/content_style"
             android:layout_gravity="center"/>
