@@ -1,8 +1,8 @@
 package com.leaf.prefix_generator_android.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.leaf.prefix_generator_android.R
@@ -22,16 +22,6 @@ class MainActivity : BaseActivity(), MainContract.View {
     override lateinit var presenter: MainContract.Presenter
     override lateinit var binding: ActivityMainBinding
 
-    private var jobs1 = arrayOf<String>()
-    private var jobs2 = arrayOf<String>()
-    private var locations1 = arrayOf<String>()
-    private var locations2 = arrayOf<String>()
-    private var specificLocationsLocations = arrayOf<String>()
-    private var specificLocationsJobs = arrayOf<String>()
-    private var objects = arrayOf<String>()
-    private var exampleNames = arrayOf<String>()
-    private var exampleLocations = arrayOf<String>()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -42,20 +32,7 @@ class MainActivity : BaseActivity(), MainContract.View {
         init()
     }
 
-    override fun init() {
-
-        jobs1 = resources.getStringArray(R.array.jobs1)
-        jobs2 = resources.getStringArray(R.array.jobs2)
-        locations1 = resources.getStringArray(R.array.locations1)
-        locations2 = resources.getStringArray(R.array.locations2)
-        specificLocationsLocations = resources.getStringArray(R.array.specificLocationsLocations)
-        specificLocationsJobs = resources.getStringArray(R.array.specificLocationsJobs)
-        objects = resources.getStringArray(R.array.objects)
-        exampleNames = resources.getStringArray(R.array.exampleNames)
-        exampleLocations = resources.getStringArray(R.array.exampleLocations)
-
-        showExample()
-    }
+    override fun init() = showExample()
 
     override fun showExample() {
 
@@ -63,11 +40,12 @@ class MainActivity : BaseActivity(), MainContract.View {
             Observable.interval(0, 5000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .map { presenter.getExampleName(exampleLocations, exampleNames) }
+                .map { presenter.getExampleName() }
                 .subscribe {
                     example_location.text = it[0]
                     example_name.text = it[1]
-                    Log.d("test", "${it[0]} ${it[1]}")
+                    example_result_name.text = it[2]
+                    Log.d("test", "${it[0]} ${it[1]} ${it[2]}")
                 }
         )
     }
@@ -82,4 +60,17 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun hideKeyboard() = KeyboardUtil.showKeyboard(this.currentFocus, this)
 
     override fun showToast(message: String) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+    override fun getContext(): Context = this
+
+    override fun buttonOnClick() {
+        presenter.addDisposable(
+            Observable.just(presenter.getPrefixName(location.text.toString(), name.text.toString()))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { result_name.text = it }
+        )
+    }
+
+    override fun clipBoardOnClick() = presenter.clipBoardText(result_name)
 }

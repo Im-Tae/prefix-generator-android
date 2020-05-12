@@ -1,5 +1,6 @@
 package com.leaf.prefix_generator_android.ui.contract
 
+import android.widget.TextView
 import com.leaf.prefix_generator_android.base.BasePresenter
 import com.leaf.prefix_generator_android.base.BaseView
 
@@ -7,11 +8,17 @@ class MainContract {
 
     interface View : BaseView<Presenter> {
         fun showExample()
+
+        fun buttonOnClick()
+
+        fun clipBoardOnClick()
     }
 
     interface Presenter : BasePresenter<View> {
-        fun getName()
+        fun getPrefixName(location: String = "", name: String = ""): String
 
-        fun getExampleName(locations : Array<String>, names: Array<String>) : ArrayList<String>
+        fun getExampleName() : ArrayList<String>
+
+        fun clipBoardText(text : TextView)
     }
 }

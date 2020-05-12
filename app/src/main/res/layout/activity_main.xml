@@ -65,7 +65,7 @@
                 android:layout_gravity="center"
                 android:text="생성!"
                 style="@style/button_style"
-                android:onClick="@{() -> main.presenter.getName()}"
+                android:onClick="@{() -> main.buttonOnClick()}"
                 />
 
         </LinearLayout>
@@ -76,6 +76,7 @@
             android:layout_height="wrap_content"
             android:text="생성 버튼을 누르면 여기에 결과가 표시됩니다."
             style="@style/content_style"
+            android:onClick="@{() -> main.clipBoardOnClick()}"
             />
 
         <View
