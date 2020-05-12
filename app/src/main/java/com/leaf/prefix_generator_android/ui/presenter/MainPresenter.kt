@@ -4,10 +4,12 @@ import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.widget.TextView
+import com.daangn.www.betterkoreankotlin.JosaType
 import com.leaf.prefix_generator_android.R
 import com.leaf.prefix_generator_android.ui.contract.MainContract
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import strings.appendJosa
 
 class MainPresenter(override val view: MainContract.View) : MainContract.Presenter {
 
@@ -94,7 +96,7 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
                 if (info[1] == "산채비빔밥먹는스님앞에서")
                     return "${info[1]} $randomObject 먹는 ${info[3]}"
                 if (info[2] == "교제사실을들킨") // 이 부분 조사 추가 해야됨.
-                    return "${info[0]} ${info[1]} $randomObject 와 ${info[2]} ${info[3]}"
+                    return "${info[0]} ${info[1]} ${randomObject.appendJosa(JosaType.Type_와과)} ${info[2]} ${info[3]}"
 
                 return "${info[0]} ${info[1]} $randomObject ${info[2]} ${info[3]}"
             }
