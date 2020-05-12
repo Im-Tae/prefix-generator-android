@@ -37,7 +37,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     override fun showExample() {
 
         presenter.addDisposable(
-            Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
+            Observable.interval(0, 5000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map { presenter.getExampleName() }
