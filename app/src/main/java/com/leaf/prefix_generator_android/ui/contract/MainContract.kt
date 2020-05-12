@@ -13,7 +13,7 @@ class MainContract {
 
         fun clipBoardOnClick()
 
-        fun showFragment()
+        //fun showFragment()
     }
 
     interface Presenter : BasePresenter<View> {

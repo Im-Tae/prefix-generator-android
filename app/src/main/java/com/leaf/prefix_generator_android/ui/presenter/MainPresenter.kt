@@ -22,6 +22,7 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
     private var locations2 = context.resources.getStringArray(R.array.locations2)
     private var specificLocationsLocations = context.resources.getStringArray(R.array.specificLocationsLocations)
     private var specificLocationsJobs = context.resources.getStringArray(R.array.specificLocationsJobs)
+    private var specificLocationsBoolean = context.resources.getStringArray(R.array.specificLocationsBoolean)
     private var objects = context.resources.getStringArray(R.array.objects)
     private var exampleNames = context.resources.getStringArray(R.array.exampleNames)
     private var exampleLocations = context.resources.getStringArray(R.array.exampleLocations)
@@ -30,12 +31,13 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
 
         var prefixName = ""
 
+        var randomLocation1 = locations1[(locations1.indices).random()]
+        val randomLocation2 = locations2[(locations2.indices).random()]
+
+        val randomJob1 = jobs1[(jobs1.indices).random()]
+        val randomJob2 = jobs2[(jobs2.indices).random()]
+
         if ((1..10).random() > 8) { // 일반 장소 처리
-
-            var randomLocation1 = locations1[(locations1.indices).random()]
-
-            val randomJob1 = jobs1[(jobs1.indices).random()]
-            val randomJob2 = jobs2[(jobs2.indices).random()]
 
             // 특별한 문장 정의
             if (randomLocation1 == "시내버스") {
@@ -60,12 +62,10 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
 
         } else { // 특별한 위치 변수 정의 || 여기서 문제가 발생한다면 특별한 위치 변수를 제대로 정의하지 않은것.
 
-            val randomLocation2 = locations2[(locations2.indices).random()]
-
-            prefixName = if (specificLocationsLocations.contains(randomLocation2)) {
-                generateSpecificCase(2, arrayListOf(location, randomLocation2, specificLocationsJobs[specificLocationsLocations.indexOf(randomLocation2)], name))
+            prefixName = if (!specificLocationsLocations.contains(randomLocation2)) {
+                generateSpecificCase(2, arrayListOf(location, randomLocation2, randomJob1, name))
             } else {
-                generateSpecificCase(3, arrayListOf(location, randomLocation2, specificLocationsLocations[specificLocationsLocations.indexOf(randomLocation2)], name))
+                generateSpecificCase(3, arrayListOf(location, randomLocation2, specificLocationsJobs[specificLocationsLocations.indexOf(randomLocation2)], name), specificLocationsBoolean[specificLocationsLocations.indexOf(randomLocation2)])
             }
         }
 
@@ -87,7 +87,7 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
         return exampleNameArrayList
     }
 
-    private fun generateSpecificCase(caseCode : Int, info : ArrayList<String>): String {
+    private fun generateSpecificCase(caseCode : Int, info : ArrayList<String>, bool : String = ""): String {
 
         when(caseCode) {
             1 -> {
@@ -95,7 +95,7 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
 
                 if (info[1] == "산채비빔밥먹는스님앞에서")
                     return "${info[1]} $randomObject 먹는 ${info[3]}"
-                if (info[2] == "교제사실을들킨") // 이 부분 조사 추가 해야됨.
+                if (info[2] == "교제사실을들킨")
                     return "${info[0]} ${info[1]} ${randomObject.appendJosa(JosaType.Type_와과)} ${info[2]} ${info[3]}"
 
                 return "${info[0]} ${info[1]} $randomObject ${info[2]} ${info[3]}"
@@ -104,7 +104,7 @@ class MainPresenter(override val view: MainContract.View) : MainContract.Present
             2 -> return "${info[0]} ${info[1]} ${info[2]} ${info[3]}"
 
             3 -> {
-                return if (info[0] == "" || (0..1).random() == 0) {
+                return if (bool == "true") {
                     "${info[1]} ${info[2]} ${info[3]}"
                 } else {
                     if ((0..1).random() == 0) {
