@@ -8,7 +8,6 @@
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,6 +48,7 @@
                 android:background="@drawable/custom_edittext"
                 android:hint="거주지(선택)"
                 style="@style/editText_style"
+                android:inputType="text"
                 />
 
             <EditText
@@ -59,6 +59,7 @@
                 android:background="@drawable/custom_edittext"
                 android:hint="이름"
                 style="@style/editText_style"
+                android:inputType="text"
                 />
 
             <Button
