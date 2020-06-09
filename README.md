@@ -32,7 +32,7 @@ https://name.ho9.me/
 
 ### 악질 이름 생성기 다운받기
 
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width = "600" height = "200"  />]() 
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width = "600" height = "200"  />](https://play.google.com/store/apps/details?id=com.leaf.prefix_generator_android) 
 
 링크 추가 예정.
 
